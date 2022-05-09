@@ -21,7 +21,7 @@ const verifyJWT = (req, res, next) => {
         if (err) {
             return res.status(403).send({ message: 'forbidden' })
         }
-        req.decoded = decoded;
+        req.decoded = decoded
         next();
     })
 }
@@ -43,8 +43,8 @@ app.post('/login', (req, res) => {
             process.env.ACCESS_TOKEN_SECRET,
             { expiresIn: '1h' })
         res.send({
-            success:
-                accessToken: accessToken
+            success: true,
+            accessToken: accessToken
         })
     }
     else {
