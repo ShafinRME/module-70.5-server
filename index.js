@@ -21,7 +21,7 @@ const verifyJWT = (req, res, next) => {
         if (err) {
             return res.status(403).send({ message: 'forbidden' })
         }
-        req.decoded = decoded
+        req.decoded = decoded;
         next();
     })
 }
